@@ -9,8 +9,8 @@
   line-height: 1.5;
   font-weight: 400;
 
-  --mainColor: #3399FF;
-  --mainBg: #0A1929;
+  --primaryColor: rgb(51, 153, 255);
+  --primaryBg: #0A1929;
   --componentBg: #040C15;
   --componentSecondaryBg: rgba(51, 153, 255, 0.08);
   --frontColor: #FFFFFF;
@@ -37,7 +37,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--primaryColor);
   text-decoration: inherit;
 }
 a:hover {
@@ -46,11 +46,9 @@ a:hover {
 
 body {
   font-family: 'Roboto', sans-serif;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: var(--mainBg);
+  background-color: var(--primaryBg);
 }
 
 button:hover {
