@@ -18,7 +18,7 @@ export default function Signup() {
   // check if logged in
   useEffect(() => {
     if (getItem("token")) {
-      navigate("/dashboard");
+      navigate("/dashboard/");
     }
   }, [navigate]);
 
@@ -46,7 +46,7 @@ export default function Signup() {
       const user = resp.data.data;
       setAuth({ isAuthenticated: true, user });
       storeItem("token", resp.data.token);
-      navigate("/dashboard");
+      navigate("/dashboard/");
     } catch (error) {
       toast.error(error.response.data.message);
     }

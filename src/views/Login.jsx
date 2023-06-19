@@ -22,10 +22,9 @@ export default function Login() {
 
   const [auth, setAuth] = useRecoilState(authState);
 
-  // check if logged in
   useEffect(() => {
     if (getItem("token")) {
-      navigate("/dashboard");
+      navigate("/dashboard/");
     }
   }, [navigate]);
 
@@ -35,7 +34,7 @@ export default function Login() {
       const user = resp.data.data;
       storeItem("token", resp.data.token);
       setAuth({ isAuthenticated: true, user });
-      navigate("/dashboard");
+      navigate("/dashboard/");
     } catch (error) {
       toast.error(error.response.data.message);
     }
